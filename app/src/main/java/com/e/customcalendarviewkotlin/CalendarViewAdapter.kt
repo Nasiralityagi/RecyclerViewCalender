@@ -17,7 +17,11 @@ class CalendarViewAdapter(private val mContext: Context, monthCalendar: Gregoria
     : RecyclerView.Adapter<CalendarViewAdapter.NoteViewHolder>() {
     var noteFilterList: ArrayList<String> = ArrayList()
     var context: Context? = null
+    private var size: Int = 0
 
+    fun setSize(size: Int){
+        this.size = size
+    }
     fun setItems(items: ArrayList<String>) {
         for (i in 0 until items.size) {
             val sdfmt1 = SimpleDateFormat("yyyy/MM/dd");
@@ -43,7 +47,7 @@ class CalendarViewAdapter(private val mContext: Context, monthCalendar: Gregoria
     }
 
     override fun getItemCount(): Int {
-        return noteFilterList.size
+        return size
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {

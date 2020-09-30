@@ -44,11 +44,12 @@ class CalendarFragment : Fragment() {
         cal.set(Calendar.DAY_OF_MONTH, 1)
         val maxDay2 = cal.getActualMaximum(Calendar.DAY_OF_MONTH)
 
-        for (i in 0 until 14) {
+        for (i in 0 until maxDay2) {
             cal.set(Calendar.DAY_OF_MONTH, i + 1)
             items!!.add(df.format(cal.time))
         }
 
+        adapter!!.setSize(14)
         adapter!!.setItems(items!!)
         adapter!!.notifyDataSetChanged()
     }
