@@ -19,17 +19,13 @@ class CalendarViewAdapter(private val mContext: Context, monthCalendar: Gregoria
     var context: Context? = null
 
     fun setItems(items: ArrayList<String>) {
-
-
         for (i in 0 until items.size) {
-
-
             val sdfmt1 = SimpleDateFormat("yyyy/MM/dd");
             val dDate = sdfmt1.parse(items[i]);
 //            val formatter: DateFormat = SimpleDateFormat("yyyy/MM/dd")
             val cur = sdfmt1.format(Date())
             val curDate = sdfmt1.parse(cur)
-            if (dDate!! >= curDate) {
+            if (dDate!! > curDate) {
                 Log.v("Itemssate", "Okay" + items[i])
                 noteFilterList.add(items[i])
             }

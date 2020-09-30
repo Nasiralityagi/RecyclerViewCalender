@@ -15,6 +15,7 @@
         android:animateLayoutChanges="true"
         android:background="@drawable/card_white"
         android:orientation="vertical"
+        android:padding="8dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -67,9 +68,9 @@
 
             <ImageView
                 android:id="@+id/more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="4dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
                 android:background="?attr/selectableItemBackground"
                 android:src="@drawable/ic_arrow" />
         </LinearLayout>
